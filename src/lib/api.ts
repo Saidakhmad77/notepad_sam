@@ -1,11 +1,10 @@
-// src/lib/api.ts
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { token } from './token';
 import { API_BASE } from './routes';
 
 export const api = axios.create({
   baseURL: API_BASE,
-  withCredentials: true, // needed if your backend uses cookies
+  withCredentials: true,
 });
 
 // Attach access token to every request
