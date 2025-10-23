@@ -14,7 +14,7 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   return config;
 });
 
-// Optional: handle 401 errors & refresh automatically
+// Handle 401 errors & refresh automatically
 let isRefreshing = false;
 let refreshQueue: ((newToken: string) => void)[] = [];
 
