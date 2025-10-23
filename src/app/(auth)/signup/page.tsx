@@ -8,7 +8,7 @@ import { routes } from '@/lib/routes';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/useAuthStore';
 import { useState } from 'react';
-import { Eye, EyeOff } from 'lucide-react'; // optional icon package (npm i lucide-react)
+import { Eye, EyeOff } from 'lucide-react';
 
 const schema = z
   .object({
@@ -45,7 +45,7 @@ export default function SignUpPage() {
 
       const { accessToken, refreshToken } = res.data;
       setTokens(accessToken, refreshToken);
-      router.replace('/signin'); // go to sign in after successful signup
+      router.replace('/signin');
     } catch (err: any) {
       const msg =
         err?.response?.data?.message ||

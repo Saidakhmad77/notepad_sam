@@ -22,7 +22,7 @@ export default function NotesPage() {
 
   async function fetchNotes() {
     setLoading(true);
-    const res = await api.get(routes.boards(0, 10)); // GET /boards?page=0&size=10
+    const res = await api.get(routes.boards(0, 10)); 
     const data = res.data;
     const items: Note[] = Array.isArray(data) ? data : (data.items ?? data.content ?? data.results ?? []);
     setNotes(items);
