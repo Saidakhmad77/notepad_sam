@@ -4,13 +4,13 @@ import { API_BASE } from './routes';
 
 export const api = axios.create({
   baseURL: API_BASE,
-  withCredentials: true,
+  withCredentials: false,
 });
 
 // Attach access token to every request
-api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  const access = token.access;
-  if (access) config.headers.Authorization = `Bearer ${access}`;
+api.interceptors.request.use((config) => {
+  const t = token.access;
+  if (t) config.headers.Authorization = `Bearer ${t}`;
   return config;
 });
 
